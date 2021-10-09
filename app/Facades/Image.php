@@ -10,5 +10,4 @@ class Image extends Facade
     {
         return 'service.image';
     }
-
 }

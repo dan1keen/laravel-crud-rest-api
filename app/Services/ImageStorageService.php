@@ -6,7 +6,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
-class ImageService
+class ImageStorageService
 {
     public function upload(UploadedFile $tmpImage, $basePath)
     {

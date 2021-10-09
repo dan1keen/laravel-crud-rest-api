@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Services\ImageService;
+use App\Services\ImageStorageService;
 use Illuminate\Support\ServiceProvider;
 
 class FacadesServiceProvider extends ServiceProvider
@@ -14,7 +14,7 @@ class FacadesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('service.image', ImageService::class);
+        $this->app->bind('service.image', ImageStorageService::class);
     }
 
     /**

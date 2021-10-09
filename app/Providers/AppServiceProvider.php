@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\Api\NewsController;
 use App\Services\ICrudService;
 use App\Services\News\NewsService;
 use Illuminate\Support\ServiceProvider;
@@ -15,7 +16,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ICrudService::class, NewsService::class);
+        $this->app
+            ->when(NewsController::class)
+            ->needs(ICrudService::class)
+            ->give(NewsService::class);
     }
 
     /**
