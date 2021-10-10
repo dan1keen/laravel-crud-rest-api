@@ -1,7 +1,7 @@
 
-## Laravel CRUD REST API (Without authentication)
+# Laravel CRUD REST API (Without authentication)
 
-# Необходимо выполнить команды по порядку!
+## Необходимо выполнить команды по порядку!
 1) service mysql stop (если включен mysql локально и порт равен 3306)
 2) git clone https://github.com/dan1keen/laravel-crud-rest-api.git
 3) docker-compose up -d
@@ -11,11 +11,11 @@
 2) composer install
 3) php artisan key:generate
 
-# Создание таблиц и заполнение ее данными: php artisan migrate --seed
+## Создание таблиц и заполнение ее данными: php artisan migrate --seed
 
-# Тестирование api можно выполнить прописав команду: php artisan test --filter NewsTest
+## Тестирование api можно выполнить прописав команду: php artisan test --filter NewsTest
 
-# Создание новости:
+## Создание новости:
 Необходимые параметры:
 ```     
 public function rules()
@@ -33,9 +33,9 @@ public function rules()
 }
 ```
 
-# Редактирование новости:
+## Редактирование новости:
 Есть два метода POST и PUT/PATCH
-1) Необходимые параметры:
+Необходимые параметры:
 ```     
 public function rules()
 {
