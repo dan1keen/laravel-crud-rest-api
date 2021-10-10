@@ -44,7 +44,7 @@ public function rules()
         'description'  => 'sometimes|string|max:255',
         'text'         => 'sometimes',
         'image'        => 'sometimes|image|mimes:jpg,jpeg,png', // если указать параметр, то нужно использовать метод POST
-        'image_url'    => 'sometimes|string', // альтернативно при использовании методов PUT/PATCH можно указать ссылку на картинку
+        'image_url'    => 'sometimes|string', // при использовании методов PUT/PATCH используйте ссылку на файл вместо параметра image
         'status'       => 'sometimes|boolean',
     ];
 }
