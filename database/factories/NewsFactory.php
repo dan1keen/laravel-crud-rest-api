@@ -27,7 +27,7 @@ class NewsFactory extends Factory
             'description'  => $this->faker->realText(rand(100, 200)),
             'text'         => $text,
             'image'        => $this->faker->imageUrl(),
-            'published_at' => $this->faker->dateTime(),
+            'published_at' => $this->faker->dateTime()->format('Y-m-d H:i:s'),
             'status'       => $this->faker->boolean(),
         ];
     }

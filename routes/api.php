@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::group(['namespace' => 'Api'], function () {
+Route::group([
+    'namespace' => 'Api',
+    'as'        => 'api.',
+], function () {
     Route::apiResource('news', 'NewsController');
     Route::post('/news/{news}', 'NewsController@update')->name('news.update');
 });

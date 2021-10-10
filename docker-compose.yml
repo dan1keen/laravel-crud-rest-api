@@ -38,14 +38,13 @@ services:
     db:
         image: mysql:5.7.29
         container_name: db
-        env_file: .env
         restart: unless-stopped
         tty: true
         ports:
             - "3306:3306"
         environment:
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: news_crud_rest # Можно задать как ${DB_DATABASE} если хотим брать данные через .env
+            MYSQL_ROOT_PASSWORD: 12345 # Можно задать как ${DB_PASSWORD} если хотим брать данные через .env
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
         volumes:

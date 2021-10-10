@@ -46,7 +46,7 @@ class NewsService implements ICrudService
         } else {
             $item = $this->model;
         }
-        $data = $request->all();
+        $data = $request->except(['image']);
         if ($requestImage = $request->file('image')) {
             if ($image = Image::upload($requestImage, $this->model->image_base_path)) {
                 $data['image'] = $image;
