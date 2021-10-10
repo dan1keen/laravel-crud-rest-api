@@ -7,9 +7,9 @@
 3) docker-compose up -d
 4) docker exec -it app bash
 В app контейнере выполнить эти команды:
-1) cp .env.example .env
-2) composer install
-3) php artisan key:generate
+1) cp .env.example .env (docker-compose exec app cp .env.example .env)
+2) composer install (docker-compose exec app composer install)
+3) php artisan key:generate (docker-compose exec app php artisan key:generate)
 
 ## Создание таблиц и заполнение ее данными: php artisan migrate --seed
 
@@ -36,7 +36,10 @@ public function rules()
 ## Редактирование новости:
 Есть два метода POST и PUT/PATCH
 Необходимые параметры:
-```     
+```
+curl -H "Content-Type: application/json" -X PUT -d '{"name": "Updated"}'  http://localhost:8090/api/news/1
+curl -H "Content-Type: application/json" -d '{"name": "Updated"}'  http://localhost:8090/api/news/1
+
 public function rules()
 {
     return [
@@ -50,3 +53,9 @@ public function rules()
 }
 ```
 
+## Просмотр отдельной новости
+```curl -H "Content-Type: application/json" http://localhost:8090/api/news/1```
+
+## Просмотр всех новостей
+```curl -H "Content-Type: application/json" http://localhost:8090/api/news```
+## Для более подробного списка маршрутов: docker-compose exec app php artisan route:list
